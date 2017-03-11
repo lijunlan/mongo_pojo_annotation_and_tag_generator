@@ -61,8 +61,8 @@ public class Starter {
             fr = new FileReader(from);
             br = new BufferedReader(fr);
             String line = br.readLine();
-            Pattern pattern = Pattern.compile(" *private *[a-zA-Z,<,>]* *[a-zA-Z]*;");
-            Pattern p = Pattern.compile("[a-zA-Z]*;$");
+            Pattern pattern = Pattern.compile(" *private *[a-zA-Z,<,>]* *[a-zA-Z0-9]*;");
+            Pattern p = Pattern.compile("[a-zA-Z0-9]*;$");
             String className = "";
             while (line != null) {
                 if(line.contains("public class ")){
@@ -128,8 +128,8 @@ public class Starter {
             fr = new FileReader(from);
             br = new BufferedReader(fr);
             String line = br.readLine();
-            Pattern pattern = Pattern.compile(" *private *[a-zA-Z,<,>]* *[a-zA-Z]*;");
-            Pattern p = Pattern.compile("[a-zA-Z]*;$");
+            Pattern pattern = Pattern.compile(" *private *[a-zA-Z,<,>]* *[a-zA-Z,0-9]*;");
+            Pattern p = Pattern.compile("[a-zA-Z,0-9]*;$");
             while (line != null) {
                 Matcher matcher = pattern.matcher(line);
                 if (matcher.matches()) {
